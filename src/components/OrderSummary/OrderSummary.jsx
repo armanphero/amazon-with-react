@@ -17,7 +17,7 @@ const OrderSummary = ({ cartProduct }) => {
 
 
 const SingleProductOrderInfo = ({ product }) => {
-    console.log(product);
+    // console.log(product);
     const { name, img, quantity } = product;
     return (
         <div className='order-info'>
