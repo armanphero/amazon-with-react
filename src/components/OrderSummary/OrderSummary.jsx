@@ -4,7 +4,7 @@ import './OrderSummary.css'
 const OrderSummary = ({ cartProduct }) => {
     return (
         <div className='order-summary'>
-            <h2>Order Summary</h2>
+            <h2>Order Summaries</h2>
             <h3>Selected Items: {cartProduct.length}</h3>
             <div className='order-container'>
                 {
