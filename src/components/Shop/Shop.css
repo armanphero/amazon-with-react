@@ -1,7 +1,6 @@
 section.products-and-cart {
     display: grid;
     grid-template-columns: 3fr 1fr;
-    padding: 2% 0;
     padding-left: 5%;
     gap: 6%;
 }
@@ -11,12 +10,9 @@ section.products-and-cart {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 15%;
     row-gap: 40px;
+    padding-top: 5%;
 }
 
-.order-summary {
-    background: #ffe0b3;
-    padding: 2%;
-}
 
 @media(max-width:768px) {
     .products {
