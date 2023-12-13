@@ -8,3 +8,22 @@
 .cart-title{
     text-align: center;
 }
+
+.cart-btn {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+}
+.cart-clear-btn-color {
+    background: #ff3030;
+    margin-bottom: 10px;
+}
+
+.cart-other-btn-color {
+    background: #ff9900;
+}

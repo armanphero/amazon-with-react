@@ -1,0 +1,43 @@
+.review-cart {
+    display: flex;
+    gap: 20px;
+    border: 1px solid lightgray;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    align-items: center;
+    width: 571px;
+    height: 107px;
+    padding: 0px 8px;
+}
+.review-cart img {
+    width: 91px;
+    height: 91px;
+    border-radius: 8px;
+}
+
+.review-name , .review-price{
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.review-quantity{
+    margin: 0;
+}
+
+.trash-icon {
+    margin-left: auto;
+    font-size: 20px;
+    background: #f9cdcd;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #eb5757;
+    cursor: pointer;
+}
+
+.trash-icon svg {
+    font-size: 30px;
+}

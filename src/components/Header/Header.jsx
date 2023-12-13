@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.css';
 import logo from '../../images/Logo.svg';
 import { handleMenu } from '../../utilities/header';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -12,10 +13,10 @@ const Header = () => {
             </svg>
 
             <div className='menu'>
-                <a href="#">Shop</a>
-                <a href="#">Orders</a>
-                <a href="#">Inventory</a>
-                <a href="#">Login</a>
+                <Link to="/shop">Shop</Link>
+                <Link to="/orders">Orders</Link>
+                <Link to="/inventory">Inventory</Link>
+                <Link to="/login">Login</Link>
             </div>
         </nav>
     );

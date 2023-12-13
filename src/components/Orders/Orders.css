@@ -1,0 +1,13 @@
+.order-page {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding-left: 5%;
+    gap: 6%;
+}
+
+.ordered-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+}
