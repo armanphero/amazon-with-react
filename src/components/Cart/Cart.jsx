@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faArrowRight,  } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 
-const Cart = ({ cartProduct, children, clearCart }) => {
+const Cart = ({ cartProduct, children, clearCart, showCart }) => {
     let totalPrice = 0;
     let shipphingCost = 0;
     cartProduct.forEach(product => {
@@ -15,7 +15,7 @@ const Cart = ({ cartProduct, children, clearCart }) => {
     const tax = (totalPrice * 7) / 100;
     const grandTotal = totalPrice + shipphingCost + tax;
     return (
-        <div className='cart'>
+        <div className={`cart ${showCart ? 'show' : ''}`}>
             <h3 className='cart-title'>Order Summary</h3>
             <p>Selected Items: {cartProduct.length}</p>
             <p>Total Price: ${totalPrice.toFixed(2)}</p>

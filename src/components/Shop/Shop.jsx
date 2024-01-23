@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping, faXmark } from '@fortawesome/free-solid-svg-icons'
 import './Shop.css'
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
@@ -7,6 +9,7 @@ import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fa
 const Shop = () => {
     const [products, setProducts] = useState([]);
     const [cartProduct, setCartProduct] = useState([]);
+    const [showCart, setShowCart] = useState(false);
     const clearCart = () => {
         setCartProduct([]);
         deleteShoppingCart();
@@ -51,7 +54,7 @@ const Shop = () => {
                 newCartProduct.push(savedProduct);
             }
         }
-        
+
         setCartProduct(newCartProduct);
 
     }, [products]);
@@ -66,10 +69,12 @@ const Shop = () => {
 
 
 
-            <div>
-                <Cart cartProduct={cartProduct} clearCart={clearCart}>Review Order</Cart>
-                {/* <OrderSummary cartProduct={cartProduct}></OrderSummary> */}
+            <div className='cart-container'>
+                <FontAwesomeIcon icon={faCartShopping} className={`shopping-cart-icon cart-show-icon ${showCart ? 'hidden' : ''}`} onClick={() => setShowCart(!showCart)} />
+                <FontAwesomeIcon icon={faXmark} className={`shopping-cart-icon cart-hide-icon ${showCart ? 'show' : 'hidden'}`} onClick={() => setShowCart(!showCart)} />
+                <Cart cartProduct={cartProduct} showCart={showCart} clearCart={clearCart}>Review Order</Cart>
             </div>
+            {/* <OrderSummary cartProduct={cartProduct}></OrderSummary> */}
         </section>
     );
 };

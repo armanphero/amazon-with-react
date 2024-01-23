@@ -7,6 +7,11 @@ import Orders from './components/Orders/Orders.jsx'
 import Shop from './components/Shop/Shop.jsx'
 import storedProducts from './utilities/orders.js'
 import Checkout from './components/Checkout/Checkout.jsx'
+import Login from './components/login/login.jsx'
+import Signup from './components/Signup/Signup.jsx'
+import Authprovider from './authprovider/Authprovider.jsx'
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx'
+import ErrorElement from './ErrorElement/ErrorElement.jsx'
 
 const router = createBrowserRouter([
   {
@@ -28,14 +33,24 @@ const router = createBrowserRouter([
       },
       {
         path: '/checkout',
-        element: <Checkout />
+        element: <ProtectedRoute><Checkout /></ProtectedRoute>
+      },
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/signup',
+        element: <Signup />
+      },
+      {
+        path: '*',
+        element: <ErrorElement />
       }
     ]
   }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
+  <Authprovider><RouterProvider router={router} /></Authprovider>
 )
