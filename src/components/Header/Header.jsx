@@ -26,7 +26,7 @@ const Header = () => {
             <div className='menu'>
                 <Link to="/shop">Shop</Link>
                 <Link to="/orders">Orders</Link>
-                <Link to="/inventory">Inventory</Link>
+                <Link to="/inventory">Inventories</Link>
                 {
                     !user &&
                     <>
